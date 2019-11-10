@@ -1,5 +1,27 @@
 body {
     margin: 0;
     padding: 0;
-    color: red;
 }
+
+.signInUp {
+    list-style: none;
+    border: 2px solid black;
+    padding: 0;
+}
+
+.signInUp li{
+    display: inline-block;
+    text-align: center;
+}
+
+.image-slideshow {
+    width: 100%;
+    height: auto;
+    background-image: url("img/banner.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+  
+
