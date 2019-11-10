@@ -16,8 +16,9 @@ body {
 
 .image-slideshow {
     width: 100%;
-    height: auto;
-    background-image: url("img/banner.jpg");
+    height: 600px;
+    background-color: red;
+    background-image: url(../img/banner.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
