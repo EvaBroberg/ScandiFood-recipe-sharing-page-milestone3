@@ -1,12 +1,17 @@
-from flask import Flask, render_template, request, redirect, url_for, session, flash, g
+from flask import Flask, render_template, request, redirect, url_for, session, flash
+from flask_sqlalchemy import SQLAlchemy
 from functools import wraps
-import sqlite3
+# import sqlite3
 
 app = Flask(__name__)
 
 app.secret_key = "super secret key"
-app.database = "scandi.db"
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
 
+#create sqlalchemy object
+db = SQLAlchemy(app)
+
+from models import *
 
 
 def login_required(f):
@@ -22,19 +27,12 @@ def login_required(f):
 @app.route('/')
 @login_required
 def index():
-    # g.db = connect_db()
-    # cur = g.db.execute('select * from posts')
-    # posts = [dict(title=row[0], description = row[1]) for row in cur.fetchall()]
-    # g.db.close()
     return render_template('index.html') 
 
 @app.route('/recipes')
 def recipes():
-    g.db = connect_db()
-    cur = g.db.execute('select * from posts')
-    posts = [dict(title=row[0], description = row[1]) for row in cur.fetchall()]
-    g.db.close()
-    return render_template('recipes.html', posts=posts) 
+    posts = db.session.query(Recipe).all()
+    return render_template('recipes.html', posts=posts) #render a template
 
 @app.route('/login', methods=['GET','POST'])   
 def login():
@@ -55,8 +53,8 @@ def logout():
     flash('You are logged out')
     return redirect(url_for('index'))    
 
-def connect_db ():
-    return sqlite3.connect(app.database)              
+# def connect_db ():
+#     return sqlite3.connect(app.database)              
 
 if __name__ == '__main__':
     app.run(debug=True)

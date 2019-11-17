@@ -44,9 +44,9 @@
 
 
 
-{% for posts in posts %}
-    <strong>Name:</strong> {{ posts.title }} <br>
-    <strong>Recipe:</strong> {{ posts.description }} <br>
+{% for post in posts %}
+    <strong>Name:</strong> {{ post.title }} <br>
+    <strong>Recipe:</strong> {{ post.description }} <br>
 {% endfor %}
 
 {% endblock %}
