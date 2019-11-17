@@ -42,4 +42,12 @@
     <div class="filterDiv norvegian">NORVEGIAN</div>
 </div>
 
+
+
+{% for posts in posts %}
+    <strong>Name:</strong> {{ posts.title }} <br>
+    <strong>Recipe:</strong> {{ posts.description }} <br>
+{% endfor %}
+
 {% endblock %}
+

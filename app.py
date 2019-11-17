@@ -1,9 +1,13 @@
-from flask import Flask, render_template, request, redirect, url_for, session, flash
+from flask import Flask, render_template, request, redirect, url_for, session, flash, g
 from functools import wraps
+import sqlite3
 
 app = Flask(__name__)
 
 app.secret_key = "super secret key"
+app.database = "scandi.db"
+
+
 
 def login_required(f):
     @wraps(f)
@@ -18,11 +22,19 @@ def login_required(f):
 @app.route('/')
 @login_required
 def index():
+    # g.db = connect_db()
+    # cur = g.db.execute('select * from posts')
+    # posts = [dict(title=row[0], description = row[1]) for row in cur.fetchall()]
+    # g.db.close()
     return render_template('index.html') 
 
 @app.route('/recipes')
 def recipes():
-    return render_template('recipes.html') 
+    g.db = connect_db()
+    cur = g.db.execute('select * from posts')
+    posts = [dict(title=row[0], description = row[1]) for row in cur.fetchall()]
+    g.db.close()
+    return render_template('recipes.html', posts=posts) 
 
 @app.route('/login', methods=['GET','POST'])   
 def login():
@@ -33,7 +45,7 @@ def login():
         else:
             session['logged_in'] = True
             flash('You are logged in')
-            return redirect(url_for('index'))
+            return redirect(url_for('recipes'))
     return render_template('login.html',error =error) 
 
 @app.route('/logout')
@@ -41,7 +53,10 @@ def login():
 def logout():
     session.pop('logged_in', None)
     flash('You are logged out')
-    return redirect(url_for('index'))                  
+    return redirect(url_for('index'))    
+
+def connect_db ():
+    return sqlite3.connect(app.database)              
 
 if __name__ == '__main__':
     app.run(debug=True)
