@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/slider.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     
     
@@ -13,10 +14,10 @@
 <body>
     
     <div class="container">
-        <div class="row">
+        <div class="row no-gutters">
             <div class="col-12">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <a class="navbar-brand" href="{{url_for('index')}}">LOGO</a>
+                    <a class="navbar-brand" href="{{url_for('index')}}"><img src="static/img/logo.jpg" alt="logo"></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -29,14 +30,17 @@
                                 <a class="nav-link" href="{{url_for('recipes')}}">Recipes</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="{{url_for('upload_file')}}">Upload a recipe</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="#">Contact</a>
                             </li>
                             <ul class="signInUp">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{url_for('login')}}">Log-in</a>
+                                    <a class="nav-link log-color" href="{{url_for('login')}}">Log-in</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{url_for('logout')}}">Log-out</a>
+                                <li class="nav-item logout">
+                                    <a class="nav-link log-color" href="{{url_for('logout')}}">Log-out</a>
                                     {% for message in get_flashed_messages() %}
                                     {{ message }}
                                     {% endfor %}
@@ -45,7 +49,7 @@
                                     <p>|</p>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Sign-up</a>
+                                    <a class="nav-link log-color" href="#">Sign-up</a>
                                 </li>
                             </ul>
                             
@@ -54,9 +58,7 @@
                 </nav>   
             </div>
         </div>
-    </div>
-    
-    
+    </div> 
     
     {% block content %}
     

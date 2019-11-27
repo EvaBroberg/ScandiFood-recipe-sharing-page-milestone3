@@ -1,76 +1,107 @@
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
-.signInUp {
-    list-style: none;
-    border: 2px solid black;
-    padding: 0;
+.index-img img {
+width: 100%;
 }
 
-.signInUp li{
-    display: inline-block;
-    text-align: center;
+.navbar-nav .active a{
+color: #3a606e!important;
+font-weight: 500;
 }
 
-.image-slideshow {
-    max-width: 100%;
-    height: 600px;
-    background-color: red;
-    background-image: url(../img/banner.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
+.navbar {
+padding: 0;
+}
+
+.navbar-nav {
+width: 100%;
+justify-content: flex-end;
+}
+
+.navbar-nav .nav-item .nav-link{
+margin-top: 15px;
+margin-bottom: 15px;
+color: #85cbcc;
 }
 
 .search-nav {
-    display: inline;
-    display: flex;
+  display: inline;
+  display: flex;
+}
+
+.navbar-brand img{
+max-width: 70px;
+height: auto;
+}
+
+.navbar-nav .logout {
+display: none;
+}
+
+
+.signInUp {
+list-style: none;
+margin-left: 15px;
+background-color: #85cbcc;
+padding: 0;
+position: relative;
+float: right;
+}
+
+.signInUp li{
+display: inline-block;
+text-align: center;
+color: #fafafa!important;
+}
+
+.signInUp .nav-item .log-color {
+color: #fafafa;
+margin: 15px;
 }
 
 button.btn.btn-outline-success.my-2.my-sm-0 {
-    padding: 11px;
+  padding: 11px;
 }
 
 .container {
-    overflow: hidden;
-  }
-  
-  .filterDiv {
-    float: left;
-    background-color: #2196F3;
-    color: #ffffff;
-    width: 100px;
-    line-height: 100px;
-    text-align: center;
-    margin: 2px;
-    display: none; /* Hidden by default */
-  }
-  
-  /* The "show" class is added to the filtered elements */
-  .show {
-    display: block;
-  }
-  
-  /* Style the buttons */
-  .btn {
-    border: none;
-    outline: none;
-    padding: 12px 16px;
-    background-color: #f1f1f1;
-    cursor: pointer;
-  }
-  
-  /* Add a light grey background on mouse-over */
-  .btn:hover {
-    background-color: #ddd;
-  }
-  
-  /* Add a dark background to the active button */
-  .btn.active {
-    background-color: #666;
-    color: white;
-  }
+  overflow: hidden;
+}
 
-  
+.filterDiv {
+  float: left;
+  background-color: #2196F3;
+  color: #ffffff;
+  width: 100px;
+  line-height: 100px;
+  text-align: center;
+  margin: 2px;
+  display: none; /* Hidden by default */
+}
 
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+/* Add a light grey background on mouse-over */
+.btn:hover {
+  background-color: #ddd;
+}
+
+/* Add a dark background to the active button */
+.btn.active {
+  background-color: #666;
+  color: white;
+}
