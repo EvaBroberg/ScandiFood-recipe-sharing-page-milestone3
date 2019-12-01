@@ -9,11 +9,21 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    margin-bottom: 30px;
+}
+
+.slider h1 {
+    position: relative;
+    top: 40%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 6rem;
+    letter-spacing: 1rem;
 }
 
 .slider .btnLeft {
     position:relative;
-    margin-top:300px;
+    margin-top:170px;
     border-top:15px solid transparent;
     border-bottom:15px solid transparent; 
     border-right:15px solid white;
@@ -28,7 +38,7 @@
 
 .slider .btnRight {
     position: relative;
-    margin-top:300px;
+    margin-top:170px;
     border-top:15px solid transparent;
     border-bottom:15px solid transparent;
     border-left:15px solid white;
