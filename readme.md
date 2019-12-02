@@ -1,3 +1,0 @@
-1. Users will be able to register and login to their own accounts where they will be able to customise their profile, add, update and delete recipes, add other people's recipes to their liked list and comment under other people's posts.
-
-2.The administrator will be able to block an account, delete any post or comment as well as be able to have their own account with same functionality as the users.
