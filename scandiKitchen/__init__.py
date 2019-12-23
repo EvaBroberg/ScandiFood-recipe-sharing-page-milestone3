@@ -6,15 +6,15 @@ from flask_login import Loginmanager
 
 app = Flask(__name__)
 
-#setup database
+# #setup database
 basedir = os.path.abspath(os.path.dirname(__file__))
-#set up connection to database
+# #set up connection to database
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///'+ os.path.join(basedir,'data.sqlite')
-app.config['SQLALCHEMY_TRACK+MODIFICATIONS'] = False
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 #create database
 db = SQLAlchemy(app)
-#connect app to database
+# #connect app to database
 Migrate(app,db)
 
 #setup login configurations

@@ -1,6 +1,7 @@
 from scandiKitchen import db,login_manager
 from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import UserMixin
+from datetime import datetime
 
 #check if user is authenticated
 @login_manager.user_loader
@@ -41,5 +42,19 @@ class User(db.Model,UserMixin):
 
     
 
-class Recipe(dn.model):
-    pass
+class Recipe(db.model):
+    
+    users = db.relationship(User)
+    #id for each recipie
+    id = db.Column(db.Integer,primary_key=True)
+    #connect recipie to a user
+    user_id = db.Column(db.Integer,db.ForeignKey('users.id'),nullable=False)
+    #add published date, title and text
+    date = db.Column(db.DateTime,nullable=False,default=datetime.utcnow)
+    title = db.Column(db.String(100),nullable=False)
+    text = db.Column(db.Text,nullable=False)
+
+    def __init__(self,title,text,user_id):
+        self.title = title
+        self.text = text
+        self.user_id = user_id
