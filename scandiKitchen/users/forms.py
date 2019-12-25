@@ -19,3 +19,12 @@ class RegistrationForm(FlaskForm):
     #creating password field and linking password to confirm password
     password = PasswordField('Password',validators=[DataRequired(),EqualTo('confirm_password')])
     confirm_password = PasswordField('Confirm Password',validators=[DataRequired()])
+
+    #check if user provided email and username is already existing
+    def check_email(self,field):
+        if User.query.filter_by(email=field.data).first():
+            raise ValidationError('This email already exists')
+
+    def check_username(self,field):
+        if User.query.filter_by(username=field.data).first():
+            raise ValidationError('This username already exists')
