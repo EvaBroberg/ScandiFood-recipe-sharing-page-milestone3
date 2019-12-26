@@ -10,6 +10,9 @@
 <li>
 <a href="https://realpython.com/python-data-classes/">Learning data classes</a>
 </li>
+<li>
+<a href="https://www.youtube.com/watch?v=jR2aFKuaOBs">Learning about validators</a>
+</li>
 </ul>
 
 

@@ -19,6 +19,7 @@ class RegistrationForm(FlaskForm):
     #creating password field and linking password to confirm password
     password = PasswordField('Password',validators=[DataRequired(),EqualTo('confirm_password')])
     confirm_password = PasswordField('Confirm Password',validators=[DataRequired()])
+    submit = SubmitField('Register')
 
     #check if user provided email and username is already existing
     def check_email(self,field):
@@ -28,3 +29,20 @@ class RegistrationForm(FlaskForm):
     def check_username(self,field):
         if User.query.filter_by(username=field.data).first():
             raise ValidationError('This username already exists')
+
+#user can update or edit their email and username
+class UpdateUserForm(FlaskForm):
+     email = StringField('Email', validators=[DataRequired(),Email()])
+     username = StringField('UserName', validators=[DataRequired()])
+     picture = FileField('Update profile picture',validators=[FileAllowed(['jpg','png'])])
+     submit = SubmitField('Update')
+
+    def check_email(self,field):
+        if User.query.filter_by(email=field.data).first():
+            raise ValidationError('This email already exists')
+
+    def check_username(self,field):
+        if User.query.filter_by(username=field.data).first():
+            raise ValidationError('This username already exists')
+
+
