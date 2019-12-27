@@ -25,7 +25,7 @@ class User(db.Model,UserMixin):
     password_hash = db.Column(db.String(128))
 
     #connecting recipe with the person who uploaded
-    posts = db.relationship('BlogPost',backref='author',lazy=True)
+    posts = db.relationship('Recipe',backref='author',lazy=True)
 
     def __init__(self,email,username,password):
         self.email = email
@@ -39,10 +39,7 @@ class User(db.Model,UserMixin):
         return f"Username {self.username}"
 
 
-
-    
-
-class Recipe(db.model):
+class Recipe(db.Model):
     
     users = db.relationship(User)
     #id for each recipie
@@ -58,3 +55,5 @@ class Recipe(db.model):
         self.title = title
         self.text = text
         self.user_id = user_id
+
+    
