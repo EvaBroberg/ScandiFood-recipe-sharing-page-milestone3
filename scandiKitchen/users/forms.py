@@ -37,11 +37,11 @@ class UpdateUserForm(FlaskForm):
      picture = FileField('Update profile picture',validators=[FileAllowed(['jpg','png'])])
      submit = SubmitField('Update')
 
-    def check_email(self,field):
+     def check_email(self,field):
         if User.query.filter_by(email=field.data).first():
             raise ValidationError('This email already exists')
 
-    def check_username(self,field):
+     def check_username(self,field):
         if User.query.filter_by(username=field.data).first():
             raise ValidationError('This username already exists')
 
