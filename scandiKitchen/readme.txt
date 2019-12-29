@@ -13,6 +13,12 @@
 <li>
 <a href="https://www.youtube.com/watch?v=jR2aFKuaOBs">Learning about validators</a>
 </li>
+<li>
+<a href="https://www.youtube.com/watch?v=PSWf2TjTGNY">Learning about Paginate in order to implement pages for user posts</a>
+</li>
+<li>
+<a href="https://pypi.org/project/paginate/">Paginate documentation and install</a>
+</li>
 </ul>
 
 
