@@ -19,6 +19,9 @@
 <li>
 <a href="https://pypi.org/project/paginate/">Paginate documentation and install</a>
 </li>
+<li>
+<a href="https://www.programiz.com/python-programming/datetime/strftime">Learning how to implement strf time</a>
+</li>
 </ul>
 
 
