@@ -84,5 +84,5 @@ def user_posts(username):
     user = User.query.filter_by(username=username).first_or_404()
     #take all recipes associate with user and sort by date, display 5 recipes per page
     recipes = Recipe.query.filter_by(author=user).order_by(Recipe.date.desc()).paginate(page=page,per_page=5)
-    #pass recipes to users template
+    #pass recipes to users template 
     return render_template('user_recipes.html',recipes=recipes,user=user)

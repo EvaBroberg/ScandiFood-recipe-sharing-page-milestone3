@@ -6,6 +6,8 @@ from flask_login import LoginManager
 
 app = Flask(__name__)
 
+app.config['SECRET_KEY'] = 'secretKey'
+
 # #setup database
 basedir = os.path.abspath(os.path.dirname(__file__))
 # #set up connection to database
