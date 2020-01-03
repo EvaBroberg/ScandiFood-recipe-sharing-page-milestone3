@@ -29,6 +29,8 @@ login_manager.login_view = 'users.login'
 
 from scandiKitchen.core.views import core
 from scandiKitchen.users.views import users
+from scandiKitchen.recipes.views import recipes
 
 app.register_blueprint(core)
 app.register_blueprint(users)
+app.register_blueprint(recipes)
