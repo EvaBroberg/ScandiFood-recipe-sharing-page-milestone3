@@ -1,7 +1,7 @@
 from flask import render_template,url_for,request,flash,redirect,Blueprint
 from flask_login import current_user,login_required
 from scandiKitchen import db
-from scandiKitchen.models import BlogPost
+from scandiKitchen.models import Recipe
 from scandiKitchen.recipes.forms import RecipeForm
 
 #register all views as a blueprint in main init.py
@@ -19,9 +19,9 @@ def create_recipe():
         db.session.add(recipe)
         db.session.commit()
         return redirect(url_for('core.index'))
-    return render_template('create_recipe.html'form=form)
+    return render_template('create_recipe.html',form=form)
 
-#view blogposts
+#view recipes
 #if correct id entered should leat to correct recipe
 #make sure id is a number
 @recipes.route('/<int:recipe_id>')
@@ -31,7 +31,7 @@ def recipe(recipe_id):
     return render_template('recipe.html',title=recipe.title,date=recipe.date,post=recipe)
 
 #update recipe
-@recipe.route('/<int:recipe_id/update>',methods=['GET','POST'])
+@recipes.route('/<int:recipe_id>/update',methods=['GET','POST'])
 @login_required
 def update(recipe_id):
     recipe = Recipe.query.get_or_404(recipe_id)
@@ -49,10 +49,10 @@ def update(recipe_id):
         recipe.title = form.title.data
         recipe.text = form.text.data
         db.session.commit()
-        return redirect(url_for('user_recipes.recipe',recipe_id = recipe.id))
+        return redirect(url_for('recipes.recipe',recipe_id=recipe.id))
     
     #keep original text prefilled in the form
-    elif request.method = 'GET':
+    elif request.method == 'GET':
         form.title.data = recipe.title
         form.text.data = recipe.text
 
@@ -62,7 +62,7 @@ def update(recipe_id):
 #delete recipe
 #NEED TO ADD A BUTTON FOR DELETION INSTEAD OF SEPARATE TEMPLATE
 
-@recipe.route('/<int:recipe_id/delete>',methods=['GET','POST'])
+@recipes.route('/<int:recipe_id>/delete',methods=['GET','POST'])
 @login_required
 def delete_recipe(recipe_id):
     recipe = Recipe.query.get_or_404(recipe_id)

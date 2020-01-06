@@ -1,5 +1,4 @@
 <!--Creating and updating recipes views template-->
-
 {% extends "base.html" %}
 
 {% block content %}
@@ -8,10 +7,12 @@
             {{form.hidden_tag()}}
 
             <div class="form-froup">
-                {{form.titlt.label(class='form-control-label')}}{{form.titlt(class="form-control form-control-lg")}}
+                {{form.title.label(class='form-control-label')}}
+                {{form.title(class="form-control form-control-lg")}}
             </div>
             <div class="form-froup">
-                {{form.text.label(class='form-control-label')}}{{form.text(class="form-control form-control-lg")}}
+                {{form.text.label(class='form-control-label')}}
+                {{form.text(class="form-control form-control-lg")}}
             </div>
             <div class="form-group">
                 {{form.submit(class="btn btn-outline-info")}}
