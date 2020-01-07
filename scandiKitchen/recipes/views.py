@@ -1,4 +1,4 @@
-from flask import render_template,url_for,request,flash,redirect,Blueprint
+from flask import render_template,url_for,flash,request,redirect,Blueprint
 from flask_login import current_user,login_required
 from scandiKitchen import db
 from scandiKitchen.models import Recipe
@@ -15,7 +15,8 @@ def create_recipe():
     form = RecipeForm()
 
     if form.validate_on_submit():
-        recipe = Recipe(title=form.title.data,text=form.data,user_id=current_user.id)
+
+        recipe = Recipe(title=form.title.data,text=form.text.data,user_id=current_user.id)
         db.session.add(recipe)
         db.session.commit()
         return redirect(url_for('core.index'))

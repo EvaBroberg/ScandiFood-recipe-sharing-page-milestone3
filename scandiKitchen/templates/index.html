@@ -27,20 +27,20 @@
     <!-- display recipes -->
     <div class="container">
         {% for post in recipes.items %}
-        <div class="card">
-            <!-- add functionality for image upload -->
-            <!-- <img src="..." class="card-img-top" alt="..."> -->
-            <div class="card-body">
-                <!-- link to recipe -->
-               <h2><a class="card-title" href="{{ url_for('recipes.recipe,recipe_id=post.id') }}">{{post.title}}</a></h2>
-               <!-- link to author's profile -->
-               <a href="{{url_for('users.user_recipes',username=post.author.username)}}">Posted by: {{post.author.username}}</a>
-               <!-- post date structured with strftime -->
-               <p>Published: {{post.date.strftime('%Y-%m-%d')}}</p>
-               <!-- direct to a single recipe page -->
-               <a class="btn btn-primary" href="{{url_for('recipes.recipe,recipe_id=post.id') }}" >Read decipe</a>
+            <div class="card">
+                <!-- add functionality for image upload -->
+                <!-- <img src="..." class="card-img-top" alt="..."> -->
+                <div class="card-body">
+                    <!-- link to recipe -->
+                <h2> <a class="card-title" href="{{ url_for('recipes.recipe',recipe_id=post.id) }}">{{post.title}}</a></h2>
+                <!-- link to author's profile -->
+                <a href="{{url_for('users.user_posts',username=post.author.username)}}">Posted by: {{post.author.username}}</a>
+                <!-- post date structured with strftime -->
+                <p>Published: {{post.date.strftime('%Y-%m-%d')}}</p>
+                <!-- direct to a single recipe page -->
+                <a class="btn btn-primary" href="{{url_for('recipes.recipe',recipe_id=post.id) }}" >Read decipe</a>
+                </div>
             </div>
-        </div>
         {% endfor %}
     </div>
     

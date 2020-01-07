@@ -3,14 +3,14 @@
 {% block content %}
 <div>
     <h1>Hi {{user.username}}</h1>
-    <img src="{{ url_for('static',filename='profile_pics/'+user.profile) }}">
+    <img src="{{ url_for('static',filename='profile_pics/'+user.profile_image) }}">
     
     
     <!--go through recipes/create a view for recipe-->
     <!--add author and date to the recipe-->
     {% for post in recipes.items %}
     <h2><a href="{{url_for('recipes.recipe',recipe_id=post.id)}}">{{post.title}}</a></h2>
-    Recipe by: <a href="{{url_for('users.user_post',username=post.author.username)}}">{{post.author.username}}</a>
+    Recipe by: <a href="{{url_for('users.user_posts',username=post.author.username)}}">{{post.author.username}}</a>
     <p>Published on: {{post.date.strftime("%Y-%m-%d")}}</p>
     </br>
     <p>{{post.text}}</p>
@@ -32,7 +32,8 @@
             <a class="page-link" href="{{url_for('users.user_posts',username=user.username,page=page_num)}}">{{page_num}}</a>
         </li>
         {% endif %}
+     {% endfor %}
     </ul>
-  </nav>
+</nav>
 
 {% endblock %}
