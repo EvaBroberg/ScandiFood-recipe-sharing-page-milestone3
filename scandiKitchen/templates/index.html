@@ -29,7 +29,7 @@
         {% for post in recipes.items %}
             <div class="card">
                 <!-- add functionality for image upload -->
-                <!-- <img src="..." class="card-img-top" alt="..."> -->
+                <img align='center' src="{{url_for('static', filename='recipe_pics/' + current_user.recipe_image)}}">
                 <div class="card-body">
                     <!-- link to recipe -->
                 <h2> <a class="card-title" href="{{ url_for('recipes.recipe',recipe_id=post.id) }}">{{post.title}}</a></h2>
