@@ -1,0 +1,42 @@
+.about-kitchen {
+    /* display: flex; */
+    margin: 50px 0 50px 0;
+}
+
+.row {
+    max-width: 1500px;
+    padding: 0;
+    margin: 0;
+}
+
+.about-description {
+    text-align: justify;
+    padding: 0;
+}
+
+.about-description h1 {
+    text-transform: uppercase;
+    color: #85cbcc;
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.about-description p {
+    font-size: 1.2rem;
+}
+
+.about-image {
+    padding: 0;
+}
+
+.about-image img {
+    max-width: 100%;
+}
+
+button.navbar-toggler {
+    border: none;
+    margin: 50px;
+    font-size: 1.5rem;
+    color: #fff;
+}

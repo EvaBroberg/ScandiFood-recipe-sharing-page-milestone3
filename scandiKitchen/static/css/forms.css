@@ -1,0 +1,27 @@
+.form-container {
+
+}
+
+.register-form {
+    width: 50%;
+    border: 2px solid #85cbcc;
+    margin: 50px 0 50px 0;
+}
+
+.register-form-text {
+    background-color: #85cbcc;
+    padding: 20px 0 20px 0;
+}
+
+.register-form-text h2 {
+    color: #fff;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.register-form-text p{
+    font-size: 1.2rem;
+    color: #fff;
+    text-transform: lowercase;
+}

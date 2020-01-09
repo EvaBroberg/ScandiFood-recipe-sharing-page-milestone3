@@ -1,13 +1,29 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <form method='POST'>
-        {{form.hidden_tag()}}
-        {{form.email.label}}{{form.email}}</br>
-        {{form.username.label}}{{form.username}}</br>
-        {{form.password.label}}{{form.password}}</br>
-        {{form.confirm_password.label}}{{form.confirm_password}}</br>
-        {{form.submit}}
-    </form>
+
+<div class="container-fluid" align="center">
+
+<form class="register-form text-center" method='POST'>
+    <div class="register-form-text">
+        <h2>Register</h2>
+        <p>Join us and let's get cooking!</p>
+    </div>
+    {{form.hidden_tag()}}
+    {{form.email.label}}{{form.email(class="form-control")}}</br>
+    {{form.username.label}}{{form.username(class="form-control")}}</br>
+    {{form.password.label}}{{form.password(class="form-control")}}</br>
+    {{form.confirm_password.label}}{{form.confirm_password(class="form-control")}}</br>
+    {{form.submit(class="btn btn-primary")}}
+</form>
+
+</div>
 
 {% endblock %}
+
+
+
+
+
+
+
