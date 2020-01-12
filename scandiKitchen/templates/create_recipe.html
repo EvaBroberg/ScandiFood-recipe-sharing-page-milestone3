@@ -7,16 +7,24 @@
             {{form.hidden_tag()}}
 
             <div class="form-group">
-                {{form.title.label(class='form-control-label')}}
-                {{form.title(class="form-control form-control-lg")}}
+                {{form.title.label}}
+                {{form.title}}
             </div>
             <div class="form-group">
-                {{form.text.label(class='form-control-label')}}
-                {{form.text(class="form-control form-control-lg")}}
+                {{form.text.label}}
+                {{form.text}}
             </div>
             <div class="form-group">
-                {{form.recipe_image.label(class='form-control-label')}}
-                {{form.recipe_image(class="form-control form-control-lg")}}
+                {{form.cook_method.label}}
+                {{form.cook_method}}
+            </div>
+            <div class="form-group">
+                {{form.ingredients.label}}
+                {{form.ingredients}}
+            </div>
+            <div class="form-group">
+                {{form.recipe_image.label}}
+                {{form.recipe_image}}
             </div>
             <div class="form-group">
                 {{form.submit(class="btn btn-outline-info")}}

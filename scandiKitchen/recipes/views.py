@@ -1,4 +1,4 @@
-from flask import render_template,url_for,flash,request,redirect,Blueprint
+from flask import render_template,url_for,flash,request,redirect,Blueprint, jsonify
 from flask_login import current_user,login_required
 from scandiKitchen import db
 from scandiKitchen.models import Recipe
@@ -16,7 +16,7 @@ def create_recipe():
 
     if form.validate_on_submit():
 
-        recipe = Recipe(title=form.title.data,text=form.text.data,recipe_image=form.recipe_image.data,user_id=current_user.id)
+        recipe = Recipe(title=form.title.data,cook_method=form.cook_method.data,text=form.text.data,user_id=current_user.id,ingredients=form.ingredients.data,recipe_image =form.recipe_image.data)
         db.session.add(recipe)
         db.session.commit()
         return redirect(url_for('core.index'))
@@ -49,7 +49,9 @@ def update(recipe_id):
         #redirecting user to updated recipe
         recipe.title = form.title.data
         recipe.text = form.text.data
-        recipe.recipe_image = form.recipe_image
+        recipe.cook_method = form.cook_method.data
+        recipe.ingredients = form.ingredients.data
+        recipe.recipe_image = form.recipe_image.data
         db.session.commit()
         return redirect(url_for('recipes.recipe',recipe_id=recipe.id))
     
@@ -57,7 +59,9 @@ def update(recipe_id):
     elif request.method == 'GET':
         form.title.data = recipe.title
         form.text.data = recipe.text
-        form.recipe_image = recipe.recipe_image
+        form.cook_method.data = recipe.cook_method
+        form.ingredients.data = recipe.ingredients
+        form.recipe_image .data = recipe.recipe_image
 
     return render_template('create_recipe.html',title='Updating',form=form)
 
@@ -78,6 +82,42 @@ def delete_recipe(recipe_id):
     return redirect(url_for('core.index'))
     
 
+# @app.route('/search')
+# def search():
+#     """Provides logic for search bar"""
+#     orig_query = request.args['query']
+
+
+
+
+    # using regular expression setting option for any case
+
+    # query = {'$regex': re.compile('.*{}.*'.format(orig_query)), '$options': 'i'}
+    # # find instances of the entered word in title, tags or ingredients
+    # results = mongo.db.recipes.find({
+    #     '$or': [
+    #         {'title': query},
+    #         {'tags': query},
+    #         {'ingredients': query},
+    #     ]
+    # })
+
+    # random_query_result = "whatever"
+
+    # # processing result
+
+    # result = [
+    #     {
+    #         "title": "x1",
+    #         "text": "y1"
+    #     },
+    #     {
+    #         "title": "x2",
+    #         "text": "y2"
+    #     }
+    # ]
+
+    # return jsonify(result)
 
 
     

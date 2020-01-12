@@ -8,7 +8,7 @@ def index():
     #set up to display recipes
     page = request.args.get('page',1,type=int)
     #display recipes in descending order by date
-    recipes = Recipe.query.order_by(Recipe.date.desc()).paginate(page=page,per_page=15)
+    recipes = Recipe.query.order_by(Recipe.date.desc()).paginate(page=page,per_page=9)
     return render_template('index.html',recipes=recipes)
 
 @core.route('/info') 

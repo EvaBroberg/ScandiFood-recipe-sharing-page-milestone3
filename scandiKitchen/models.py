@@ -50,10 +50,16 @@ class Recipe(db.Model):
     date = db.Column(db.DateTime,nullable=False,default=datetime.utcnow)
     title = db.Column(db.String(100),nullable=False)
     text = db.Column(db.Text,nullable=False)
+    cook_method = db.Column(db.Text,nullable=True)
+    ingredients = db.Column(db.Text,nullable=True)
+    recipe_image = db.Column(db.String(100),nullable=True)
 
-    def __init__(self,title,text,user_id):
+    def __init__(self,title,text,user_id,cook_method,ingredients,recipe_image):
         self.title = title
         self.text = text
         self.user_id = user_id
+        self.cook_method = cook_method
+        self.ingredients = ingredients
+        self.recipe_image = recipe_image 
 
     

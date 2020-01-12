@@ -8,7 +8,10 @@
     <h2>Posted by: {{post.author.username}}</h2>
     <h3>Posted: {{post.date.strftime('%B %d, %Y')}}</h3>
     <p>{{post.text}}</p>
-    <img align='center' src="{{url_for('static', filename='recipe_pics/')}}">
+    <p>{{post.cook_method}}</p>
+    <p>{{post.ingredients}}</p>
+    <img src="{{ post.recipe_image }}" alt="">
+    <!-- <img align='center' src="{{url_for('static', filename='recipe_pics/')}}"> -->
 
     <!--adding update button-->
     {% if post.author == current_user %}
