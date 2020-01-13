@@ -1,0 +1,18 @@
+.recipeImage-wrapper {
+    height: 30em;
+    width: 30em;
+    overflow: hidden;
+    float: right;
+}
+
+.recipeImage-wrapper img {
+    width: 100%;
+    height: auto;
+}
+
+.recipeText-wrapper {
+    width: 30em;
+    height: auto;
+    float: left;
+}
+

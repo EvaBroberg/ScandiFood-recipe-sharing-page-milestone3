@@ -4,48 +4,85 @@
 {% block content %}
 
 <div class="jumbotron">
-    <h1>{{post.title}}</h1>
-    <h2>Posted by: {{post.author.username}}</h2>
-    <h3>Posted: {{post.date.strftime('%B %d, %Y')}}</h3>
-    <p>{{post.text}}</p>
-    <p>{{post.cook_method}}</p>
-    <p>{{post.ingredients}}</p>
-    <img src="{{ post.recipe_image }}" alt="">
-    <!-- <img align='center' src="{{url_for('static', filename='recipe_pics/')}}"> -->
-
-    <!--adding update button-->
-    {% if post.author == current_user %}
-    <div>
-        <a href="{{url_for('recipes.update',recipe_id=post.id)}}">Update</a>
-        <button type="button" class="btn btn-danger" data-toggle='modal' data-target="#del_modal">Delete</button>
+  <h1>{{post.title}}</h1>
+  <h2>Posted by: {{post.author.username}}</h2>
+  <h3>Posted: {{post.date.strftime('%B %d, %Y')}}</h3>
+  
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-6">
+        <div class="recipeImage-wrapper">
+          <img src="{{ post.recipe_image }}" alt="">
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="recipeText-wrapper">
+          <p>{{post.text}}</p>
+        </div>
+      </div>
     </div>
-    {% endif %}
+    
+    
+    <div class="row">
+      <div class="col12">
+        <ul>
+          {% for ingredient in post.ingredients.split(",") %}
+          <li><p>{{ingredient}}</p></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col12">
+        <ol>
+          {% for step in post.cook_method.split(";") %}
+          <li><p>{{step}}</p></li>
+          {% endfor %}
+        </ol>
+      </div>
+    </div>
+    
+  </div>
+  
+  
+  
+  
+  <!-- <img align='center' src="{{url_for('static', filename='recipe_pics/')}}"> -->
+  
+  <!--adding update button-->
+  {% if post.author == current_user %}
+  <div>
+    <a href="{{url_for('recipes.update',recipe_id=post.id)}}">Update</a>
+    <button type="button" class="btn btn-danger" data-toggle='modal' data-target="#del_modal">Delete</button>
+  </div>
+  {% endif %}
 </div>
 
 <!--This code is taken from bootstrap/components/modals-->
 <div class="modal" tabindex="-1" role="dialog" id="del_modal">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Delete Recipe</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p>Are you sure you want to delete this recipe?</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-
-            <!--activating delete button-->
-            <!--when this form is submitted takes to delete post url which is going to delete recipe and redirect to index.html-->
-            <form action="{{url_for('recipes.delete_recipe',recipe_id=post.id)}}" method="POST">
-                <input class="btn btn-danger" type="submit" value="Delete">
-            </form>
-        </div>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Delete Recipe</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete this recipe?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        
+        <!--activating delete button-->
+        <!--when this form is submitted takes to delete post url which is going to delete recipe and redirect to index.html-->
+        <form action="{{url_for('recipes.delete_recipe',recipe_id=post.id)}}" method="POST">
+          <input class="btn btn-danger" type="submit" value="Delete">
+        </form>
       </div>
     </div>
   </div>
+</div>
 
 {% endblock %}

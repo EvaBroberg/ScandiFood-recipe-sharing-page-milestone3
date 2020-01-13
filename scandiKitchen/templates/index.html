@@ -27,8 +27,10 @@
     <!-- display recipes -->
     <div class="container">
         {% for post in recipes.items %}
-            <div class="card">
-                <!-- add functionality for image upload -->
+            <div class="card" style="width: 18rem;">
+
+                <img src="{{ post.recipe_image }}" class="card-img-top" alt="...">
+
                 <div class="card-body">
                     <!-- link to recipe -->
                 <h2> <a class="card-title" href="{{ url_for('recipes.recipe',recipe_id=post.id) }}">{{post.title}}</a></h2>
