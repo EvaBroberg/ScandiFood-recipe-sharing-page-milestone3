@@ -31,6 +31,14 @@ def recipe(recipe_id):
     recipe = Recipe.query.get_or_404(recipe_id)
     return render_template('recipe.html',title=recipe.title,date=recipe.date,post=recipe)
 
+#Search recipe
+@recipes.route('/search/<string:search_word>')
+def search(search_word):
+    search_results = Recipe.query.filter(Recipe.title.contains(search_word)).all()
+    print(search_results)
+    return render_template('search.html',recipes=search_results)
+
+
 #update recipe
 @recipes.route('/<int:recipe_id>/update',methods=['GET','POST'])
 @login_required
