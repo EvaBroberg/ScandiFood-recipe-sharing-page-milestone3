@@ -1,6 +1,10 @@
+.navbarAbout {
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
 .about-kitchen {
-    /* display: flex; */
-    margin: 50px 0 50px 0;
+    margin: 0px 0 50px 0;
 }
 
 .row {
@@ -11,7 +15,7 @@
 
 .about-description {
     text-align: justify;
-    padding: 0;
+    padding: 0 20px 0 20px;
 }
 
 .about-description h1 {
@@ -19,7 +23,8 @@
     color: #85cbcc;
     text-align: center;
     font-weight: 400;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .about-description p {
@@ -40,3 +45,24 @@ button.navbar-toggler {
     font-size: 1.5rem;
     color: #fff;
 }
+
+
+
+@media (min-width: 1200px) {
+    
+    .about-description {
+        padding: 0;
+    }
+    
+    .about-description h1 {
+        margin-bottom: 30px;
+        margin-top: 0;
+    }
+
+    .about-kitchen {
+        margin: 50px 0 50px 0;
+    }
+
+}
+
+

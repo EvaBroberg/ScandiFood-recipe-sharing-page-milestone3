@@ -1,11 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <form method='POST'>
-        {{form.hidden_tag()}}
-        {{form.email.label}}{{form.email}}</br>
-        {{form.password.label}}{{form.password}}</br>
-        {{form.submit}}
+<div class="container-fluid" align="center">
+    
+    <form class="register-form text-center" method='POST'>
+        <div class="register-form-text">
+            <h2>Welcome back</h2>
+            <p>Let's get cooking!</p>
+        </div>
+        <div class="inputs-wrapper">
+            {{form.hidden_tag()}}
+            {{form.email.label}}{{form.email(class="form-control")}}</br>
+            {{form.password.label}}{{form.password(class="form-control")}}</br>
+        </div>
+        {{form.submit(class="btn btn-primary")}}
+        
     </form>
+</div>
 
 {% endblock %}

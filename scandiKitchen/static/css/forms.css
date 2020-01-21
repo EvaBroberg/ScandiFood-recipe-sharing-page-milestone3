@@ -3,7 +3,7 @@
 }
 
 .register-form {
-    width: 50%;
+    width: 90%;
     border: 2px solid #85cbcc;
     margin: 50px 0 50px 0;
 }
@@ -24,4 +24,41 @@
     font-size: 1.2rem;
     color: #fff;
     text-transform: lowercase;
+}
+
+.inputs-wrapper {
+    text-align: left;
+    margin: 1em;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    color: #85cbcc;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+
+.form-control {
+    background-color:white;
+    color: white;
+    border: solid 2px #85cbcc;
+}
+
+input#submit {
+    width: 100%;
+    background-color: #85cbcc;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+}
+
+input#submit:hover {
+    background-color: #c4d3d3;
+}
+
+@media (min-width: 1200px) {
+
+    .register-form {
+        width: 50%;
+
 }
