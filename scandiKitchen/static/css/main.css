@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 * {
@@ -24,6 +25,8 @@ body {
   max-width: 1500px;
 }
 
+/*NAVIGATION*/
+
 .navbar-nav .active a{
   color: #3a606e!important;
   font-weight: 500;
@@ -34,12 +37,15 @@ body {
   z-index: 9;
   padding-bottom: 10px;
   background-color: #85cbcc;
+  margin-bottom: 2em;
 }
 
 .navbar-nav {
-  width: 100%;
-  justify-content: flex-end;
-  margin-top: 30px;
+  text-align: center;
+}
+
+.form-inline {
+  flex-flow: row nowrap;
 }
 
 .navbar-nav .nav-item .nav-link{
@@ -59,6 +65,7 @@ body {
 .nav-link a {
   color: #fff;
 }
+
 
 .search-form {
   margin: 0 50px 0 50px;
@@ -103,12 +110,97 @@ body {
 }
 
 button.btn.btn-outline-success.my-2.my-sm-0 {
-  padding: 11px;
+  padding: 10.5px;
+}
+/*RECIPE DISPLAY*/
+
+.recipes-wrapper {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.container {
+.card {
+  width: 25em;
+  margin-bottom: 2em;
+}
+
+.card-body {
+  background-color: #85cbcc;
+  text-align: center;
+  width: 25em;
+}
+
+.card-body a {
+  color: white;
+  text-decoration: none;
+  background-color: transparent;
+  text-transform: capitalize;
+}
+
+.card-body p {
+  color: white;
+}
+
+a.card-title {
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.7rem;
+}
+
+a.btn.btn-primary {
+  background-color: white;
+  color: #85cbcc;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background-color: #a1cbcc;
+}
+
+.thumb-img-wrapper {
+  width: 25em;
+  height: 25em;
   overflow: hidden;
 }
+
+/*PAGINATION*/
+
+.page-item.disabled .page-link {
+  color: #ffffff;
+  pointer-events: none;
+  cursor: auto;
+  background-color: #85cbcc;
+  border-color: #dee2e6;
+  margin-right: 5px;
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  padding: .5rem .75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #ffffff;
+  background-color: #c4d3d3;
+  border: none;
+}
+
+a.btn.btn-primary:hover {
+  color: white;
+  background-color: #c4d3d3;
+}
+
+.page-link:hover {
+  z-index: 2;
+  color: white;
+  text-decoration: none;
+  background-color: #85cbcc;
+  border: none;
+}
+
 
 .filterDiv {
   float: left;
@@ -118,15 +210,15 @@ button.btn.btn-outline-success.my-2.my-sm-0 {
   line-height: 100px;
   text-align: center;
   margin: 2px;
-  display: none; /* Hidden by default */
+  display: none;
 }
 
-/* The "show" class is added to the filtered elements */
+
 .show {
   display: block;
 }
 
-/* Style the buttons */
+
 .btn {
   border: none;
   outline: none;
@@ -135,12 +227,12 @@ button.btn.btn-outline-success.my-2.my-sm-0 {
   cursor: pointer;
 }
 
-/* Add a light grey background on mouse-over */
+
 .btn:hover {
   background-color: #ddd;
 }
 
-/* Add a dark background to the active button */
+
 .btn.active {
   background-color: #666;
   color: white;
@@ -169,6 +261,13 @@ button.btn.btn-outline-success.my-2.my-sm-0 {
   font-size: 1.2rem;
 }
 
+/*Footer*/
+
+footer {
+  position: absolute;
+  width: 100%;
+}
+
 .footer-content {
   background-color: #85cbcc;
   text-align: center;
@@ -187,5 +286,53 @@ button.btn.btn-outline-success.my-2.my-sm-0 {
   font-size: 2rem;
   margin: 5px 10px 5px 10px;
 }
+
+
+
+@media (min-width: 1200px) {
+  
+  
+  .navbar {
+    margin-bottom: 0;
+  }
+  
+  .navbar-nav {
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 30px;
+  }
+  
+  .form-inline {
+    flex-flow: row wrap;
+  }
+  
+  .recipes-wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .container.recipes-wrapper {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .card {
+    width: 29em;
+  }
+  
+  .thumb-img-wrapper {
+    width: 29em;
+    height: 29em;
+  }
+  
+  .card-body {
+    width: 29em;
+  }
+  
+}
+
+
 
 

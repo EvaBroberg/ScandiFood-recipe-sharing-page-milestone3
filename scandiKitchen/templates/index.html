@@ -25,11 +25,12 @@
     </div>
     
     <!-- display recipes -->
-    <div class="container">
+    <div class="container recipes-wrapper">
         {% for post in recipes.items %}
-            <div class="card" style="width: 18rem;">
-
+            <div class="card">
+                <div class="thumb-img-wrapper">
                 <img src="{{ post.recipe_image }}" class="card-img-top" alt="...">
+            </div>
 
                 <div class="card-body">
                     <!-- link to recipe -->
