@@ -2,35 +2,27 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="container">
-        <form class="form-group" method="POST">
+<div class="container-fluid" align="center">
+    
+    <form class="register-form text-center" method='POST'>
+        <div class="register-form-text">
+            <h2>Upload new recipe</h2>
+        </div>
+        <div class="inputs-wrapper create-recipe-wrapper">
             {{form.hidden_tag()}}
-
-            <div class="form-group">
-                {{form.title.label}}
-                {{form.title}}
-            </div>
-            <div class="form-group">
-                {{form.text.label}}
-                {{form.text}}
-            </div>
-            <div class="form-group">
-                {{form.cook_method.label}}
-                {{form.cook_method}}
-            </div>
-            <div class="form-group">
-                {{form.ingredients.label}}
-                {{form.ingredients}}
-            </div>
-            <div class="form-group">
-                {{form.recipe_image.label}}
-                {{form.recipe_image}}
-            </div>
-            <div class="form-group">
-                {{form.submit(class="btn btn-outline-info")}}
-            </div>
-        </form>
-    </div>
+            {{form.title.label(class="recipe-label")}}{{form.title(class="form-control")}}
+            {{form.text.label(class="recipe-label")}}<p class="create-recipe">let us know a little something about this meal</p>{{form.text(class="form-control")}}
+            {{form.cook_method.label(class="recipe-label")}}<p class="create-recipe">please separate each step by comma</p>{{form.cook_method(class="form-control")}}
+            
+            {{form.ingredients.label(class="recipe-label")}}<p class="create-recipe">please separate each ingredient by comma</p>{{form.ingredients(class="form-control")}}
+            
+            {{form.recipe_image.label(class="recipe-label")}}{{form.recipe_image(class="form-control")}}
+        </div>
+        {{form.submit(class="btn btn-primary")}}
+        
+    </form>
+    
+</div>
 
 
 {% endblock %}

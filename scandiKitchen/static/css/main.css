@@ -8,6 +8,15 @@ body {
   border-radius: 0!important;
 }
 
+*:focus {
+  outline: none;
+}
+
+input#submit:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
 .fas {
   color: #85cbcc;
 }

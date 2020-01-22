@@ -1,0 +1,14 @@
+.user-img-hi {
+    text-align: center;
+}
+
+.user-img-hi img {
+    max-width: 10em;
+    border-radius: 300px!important;
+}
+
+.user-img-hi h1 {
+    text-transform: uppercase;
+    color: white;
+    margin-top: 1rem;
+}

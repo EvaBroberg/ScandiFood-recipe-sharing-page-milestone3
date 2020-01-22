@@ -2,21 +2,18 @@
 
 {% block content %}
 
-<div>
-    <div>
-        <h1>Hi {{current_user.username}}</h1>
-        <img align='center' src="{{url_for('static', filename='profile_pics/' + current_user.profile_image)}}">
-    </div>
-</div>
-
-<div>
-    <form method="POST" action="" enctype="multipart/form-data">
-        {{form.hidden_tag()}}
-        <div>
-            {{form.username.label}}{{form.username}}
-            {{form.email.label}}{{form.email}}
-            {{form.picture.label}}{{form.picture}}
-            {{form.submit()}}
+<div class="container-fluid" align="center">
+    <form class="register-form text-center" method="POST" action="" enctype="multipart/form-data">
+        <div class="user-img-hi register-form-text">
+            <img align='center' src="{{url_for('static', filename='profile_pics/' + current_user.profile_image)}}">
+            <h1>Hi {{current_user.username}}</h1>
+        </div>
+        <div class="inputs-wrapper">
+            {{form.hidden_tag()}}
+            {{form.username.label}}{{form.username(class="form-control")}}
+            {{form.email.label}}{{form.email(class="form-control")}}
+            {{form.picture.label}}{{form.picture(class="form-control")}}
+            {{form.submit(class="btn btn-primary")}}
         </div>
     </form>
 </div>

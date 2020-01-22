@@ -41,8 +41,16 @@ label {
 
 .form-control {
     background-color:white;
-    color: white;
+    color: #85cbcc;
     border: solid 2px #85cbcc;
+}
+
+.form-control:focus {
+    color: #85cbcc;
+    background-color: #fff;
+    border-color: #85cbcc;
+    outline: 0;
+    box-shadow: none;
 }
 
 input#submit {
@@ -54,6 +62,19 @@ input#submit {
 
 input#submit:hover {
     background-color: #c4d3d3;
+}
+
+/*create recipe form*/
+
+p.create-recipe {
+    margin-top: 0;
+    color: #85cbcc;
+    margin-bottom: 1.2rem;
+    line-height: 1px;
+}
+
+.recipe-label {
+    margin-top: 1.5rem;
 }
 
 @media (min-width: 1200px) {

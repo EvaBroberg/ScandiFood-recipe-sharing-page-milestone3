@@ -36,7 +36,7 @@
     <div class="row">
       <div class="col12">
         <ol>
-          {% for step in post.cook_method.split(";") %}
+          {% for step in post.cook_method.split(",") %}
           <li><p>{{step}}</p></li>
           {% endfor %}
         </ol>
