@@ -1,29 +1,27 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div>
-    <h1>Hi {{user.username}}</h1>
+<div class="userRecipeWrapper">
+    <h1>{{user.username}}</h1>
     <img src="{{ url_for('static',filename='profile_pics/'+user.profile_image) }}">
-    
-    
-    <!--go through recipes/create a view for recipe-->
-    <!--add author and date to the recipe-->
-    {% for post in recipes.items %}
-    <h2><a href="{{url_for('recipes.recipe',recipe_id=post.id)}}">{{post.title}}</a></h2>
-    Recipe by: <a href="{{url_for('users.user_posts',username=post.author.username)}}">{{post.author.username}}</a>
-    <p>Published on: {{post.date.strftime("%Y-%m-%d")}}</p>
-    </br>
-    <p>{{post.text}}</p>
-    <p>{{post.cook_method}}</p>
-    </br>
-    {% endfor %}
+    <div class="userRecipeContentWrapper">
+        <!--go through recipes/create a view for recipe-->
+        {% for post in recipes.items %}
+        <div class="userRecipeContent">
+            <h2><a href="{{url_for('recipes.recipe',recipe_id=post.id)}}">{{post.title}}</a></h2>
+            <div class="thumb-img-wrapper">
+                <img src="{{ post.recipe_image }}" class="card-img-top" alt="...">
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
 
 <!--page navigation-->
 <!--adding nav bar to navigate through pages, check which page user is on and disable this page on the nav-->
 <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center">
-     {% for page_num in recipes.iter_pages() %}
+        {% for page_num in recipes.iter_pages() %}
         {% if recipes.page == page_num %}
         <li class="page-item disabled">
             <a class="page-link" href="{{url_for('users.user_posts',username=user.username,page=page_num)}}">{{page_num}}</a>
@@ -33,7 +31,7 @@
             <a class="page-link" href="{{url_for('users.user_posts',username=user.username,page=page_num)}}">{{page_num}}</a>
         </li>
         {% endif %}
-     {% endfor %}
+        {% endfor %}
     </ul>
 </nav>
 

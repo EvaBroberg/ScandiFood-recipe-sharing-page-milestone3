@@ -2,19 +2,18 @@
 
 {% block content %}
 <div class="loginWrapper" align="center">
-    <img src="static/img/back1.jpg" alt="">
     
-    <form class="register-form text-center" method='POST'>
-        <div class="register-form-text">
+    <form class="register-form text-center loginWrapperHeight" method='POST'>
+        <div class="register-form-text login-form-text">
             <h2>Welcome back</h2>
             <p>Let's get cooking!</p>
         </div>
-        <div class="inputs-wrapper">
+        <div class="inputs-wrapper login-inputs-wrapper">
             {{form.hidden_tag()}}
             {{form.email.label}}{{form.email(class="form-control loginForms")}}</br>
             {{form.password.label}}{{form.password(class="form-control loginForms")}}</br>
         </div>
-        {{form.submit(class="btn btn-primary")}}
+        {{form.submit(class="btn btn-primary login-submit")}}
         
     </form>
 </div>
