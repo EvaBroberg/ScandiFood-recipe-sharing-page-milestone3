@@ -27,3 +27,9 @@
 recipes taken from:
 
 https://littlesunnykitchen.com/swedish-smorgastarta-sandwich-cake/
+https://foodandjourneys.net/finnish-salmon-soup-lohikeitto/
+http://www.cookr.com/recipes/karjalanpiirakka-karelian-pies
+https://www.food.com/recipe/karjalan-piirakka-karelian-pie-with-egg-butter-137150
+https://sweden.se/culture-traditions/classic-swedish-food-meatballs/
+http://vagabondbaker.com/2015/01/08/korvapuusti/
+https://www.meillakotona.fi/reseptit/sienisalaatti-suolasienista

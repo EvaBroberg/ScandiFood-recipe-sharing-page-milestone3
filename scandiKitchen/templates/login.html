@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container-fluid" align="center">
+<div class="loginWrapper" align="center">
+    <img src="static/img/back1.jpg" alt="">
     
     <form class="register-form text-center" method='POST'>
         <div class="register-form-text">
@@ -10,8 +11,8 @@
         </div>
         <div class="inputs-wrapper">
             {{form.hidden_tag()}}
-            {{form.email.label}}{{form.email(class="form-control")}}</br>
-            {{form.password.label}}{{form.password(class="form-control")}}</br>
+            {{form.email.label}}{{form.email(class="form-control loginForms")}}</br>
+            {{form.password.label}}{{form.password(class="form-control loginForms")}}</br>
         </div>
         {{form.submit(class="btn btn-primary")}}
         

@@ -1,15 +1,21 @@
-.form-container {
+.loginWrapper {
+    display: flex;
+    justify-content: center;
+}
 
+.loginWrapper img {
+    max-height: 41em;
 }
 
 .register-form {
+    position: absolute;
     width: 90%;
     border: 2px solid #85cbcc;
-    margin: 50px 0 50px 0;
+    margin: 100px 0 50px 0;
 }
 
 .register-form-text {
-    background-color: #85cbcc;
+    background-color: rgba(133, 203, 204,0.8);
     padding: 20px 0 20px 0;
 }
 
@@ -28,7 +34,8 @@
 
 .inputs-wrapper {
     text-align: left;
-    margin: 1em;
+    padding: 1em;
+    background-color: rgba(255,255,255,0.3);
 }
 
 label {
@@ -39,13 +46,12 @@ label {
     font-size: 1.2rem;
 }
 
-.form-control {
-    background-color:white;
+.loginForms {
     color: #85cbcc;
     border: solid 2px #85cbcc;
 }
 
-.form-control:focus {
+.loginForms:focus {
     color: #85cbcc;
     background-color: #fff;
     border-color: #85cbcc;

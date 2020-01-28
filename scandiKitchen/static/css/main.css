@@ -8,6 +8,9 @@ body {
   border-radius: 0!important;
 }
 
+
+
+
 *:focus {
   outline: none;
 }
@@ -36,6 +39,11 @@ input#submit:focus {
 
 /*NAVIGATION*/
 
+#search_btn:active {
+  background-color: #dee2e6;
+  border-color: #dee2e6;
+}
+
 .navbar-nav .active a{
   color: #3a606e!important;
   font-weight: 500;
@@ -46,7 +54,6 @@ input#submit:focus {
   z-index: 9;
   padding-bottom: 10px;
   background-color: #85cbcc;
-  margin-bottom: 2em;
 }
 
 .navbar-nav {
@@ -121,6 +128,7 @@ input#submit:focus {
 button.btn.btn-outline-success.my-2.my-sm-0 {
   padding: 10.5px;
 }
+
 /*RECIPE DISPLAY*/
 
 .recipes-wrapper {
@@ -128,17 +136,21 @@ button.btn.btn-outline-success.my-2.my-sm-0 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: 0;
+  margin-right: 0;
+  padding-right: 0;
+  padding-left: 0;
 }
 
 .card {
-  width: 25em;
+  width: 100%;
   margin-bottom: 2em;
 }
 
 .card-body {
   background-color: #85cbcc;
   text-align: center;
-  width: 25em;
+  width: 100%;
 }
 
 .card-body a {
@@ -169,10 +181,25 @@ a.btn.btn-primary {
   background-color: #a1cbcc;
 }
 
-.thumb-img-wrapper {
-  width: 25em;
-  height: 25em;
+.thumb-img-wrapper{
+  position: relative;
+  width: 100%;
   overflow: hidden;
+  background: #4679BD;
+}
+.thumb-img-wrapper:before{
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+.thumb-img-wrapper img{
+  position:  absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  color: white;
+  text-align: center;
 }
 
 /*PAGINATION*/
@@ -296,9 +323,56 @@ footer {
   margin: 5px 10px 5px 10px;
 }
 
+.icon:hover {
+  transform: scale(1.5);
+  transition-duration: 1s;
+}
+
+@media (min-width: 574px) {
+  .recipes-wrapper {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  
+  .navbar-expand-lg .navbar-collapse {
+    justify-content: flex-end;
+  }
+  .recipes-wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    width: 50%;
+    margin-bottom: 0;
+  }
+  
+  .container {
+    max-width: 100%;
+  }
+  
+  .recipes-wrapper {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  
+  .navbar {
+    margin-bottom: 1em;
+  }
+  
+  ul.pagination.justify-content-center {
+    margin-top: 10px;
+  }
+}
 
 
-@media (min-width: 1200px) {
+@media (min-width: 1410px) {
   
   
   .navbar {

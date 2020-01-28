@@ -3,45 +3,41 @@
 
 {% block content %}
 
-<div class="jumbotron">
+<div class="singleRecipeWrapper">
   <h1>{{post.title}}</h1>
-  <h2>Posted by: {{post.author.username}}</h2>
-  <h3>Posted: {{post.date.strftime('%B %d, %Y')}}</h3>
+  <div class="additionalInfo">
+    <p>Posted by: {{post.author.username}}</p>
+    <p>Posted: {{post.date.strftime('%B %d, %Y')}}</p>
+  </div>
   
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-6">
-        <div class="recipeImage-wrapper">
-          <img src="{{ post.recipe_image }}" alt="">
-        </div>
+  <div class="container-fluid singleRecipeContainer">
+    <div class="recipeImageandText">
+      <div class="recipeImage-wrapper">
+        <img src="{{ post.recipe_image }}" alt="">
       </div>
-      <div class="col-6">
-        <div class="recipeText-wrapper">
-          <p>{{post.text}}</p>
-        </div>
+      <div class="recipeText-wrapper">
+        <p>{{post.text}}</p>
       </div>
     </div>
     
     
-    <div class="row">
-      <div class="col12">
-        <ul>
-          {% for ingredient in post.ingredients.split(",") %}
+    <div class="instructions">
+      <div class="ingrediantsWrapper">
+        <ul class="ingrediants">
+          {% for ingredient in post.ingredients.split(";") %}
           <li><p>{{ingredient}}</p></li>
           {% endfor %}
         </ul>
       </div>
-    </div>
-    
-    <div class="row">
-      <div class="col12">
-        <ol>
-          {% for step in post.cook_method.split(",") %}
+      <div class="methodWrapper">
+        <ol class="method">
+          {% for step in post.cook_method.split(";") %}
           <li><p>{{step}}</p></li>
           {% endfor %}
         </ol>
       </div>
     </div>
+    
     
   </div>
   

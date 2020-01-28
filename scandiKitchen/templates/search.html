@@ -1,14 +1,12 @@
-<!--shows single recipe-->
 {% extends "base.html" %}
-
 {% block content %}
 
-<div class="container">
+<div class="container recipes-wrapper">
     {% for post in recipes %}
-        <div class="card" style="width: 18rem;">
-
-            <img src="{{ post.recipe_image }}" class="card-img-top" alt="...">
-
+        <div class="card">
+            <div class="thumb-img-wrapper">
+                <img src="{{ post.recipe_image }}" class="card-img-top" alt="...">
+            </div>
             <div class="card-body">
                 <!-- link to recipe -->
             <h2> <a class="card-title" href="{{ url_for('recipes.recipe',recipe_id=post.id) }}">{{post.title}}</a></h2>
@@ -22,5 +20,4 @@
         </div>
     {% endfor %}
 </div>
-
 {% endblock %}

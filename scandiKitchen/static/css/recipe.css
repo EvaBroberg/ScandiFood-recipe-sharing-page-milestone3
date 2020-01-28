@@ -1,8 +1,7 @@
 .recipeImage-wrapper {
     height: 30em;
-    width: 30em;
+    width: 100%;
     overflow: hidden;
-    float: right;
 }
 
 .recipeImage-wrapper img {
@@ -14,5 +13,61 @@
     width: 30em;
     height: auto;
     float: left;
+    width: 100%;
 }
 
+.recipeText-wrapper p {
+text-align: justify;
+font-size: 1.2rem;
+background-color: #85cbcc;
+color: white;
+padding: 1em;
+}
+
+.singleRecipeWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #85cbcc;
+    padding: 0;
+}
+
+.singleRecipeWrapper h1 {
+    margin-top: 1em;
+}
+
+.additionalInfo {
+    display: flex;
+}
+
+.additionalInfo p {
+    margin-right: 1em;
+}
+
+.method {
+    font-size: 1.2rem;
+}
+
+.ingrediants {
+    font-size: 1.2rem;
+    border-bottom: 2px solid #85cbcc;
+}
+
+
+@media (min-width: 900px) {
+    .recipeImageandText {
+        display: flex;
+        width: 100%;
+        background-color: #85cbcc;
+    }
+    .instructions {
+        display: flex;
+        border: 2px solid #85cbcc;
+        padding: 4em;
+        justify-content: center;
+    }
+    .ingrediants {
+        margin-right: 2em;
+        
+    }
+}

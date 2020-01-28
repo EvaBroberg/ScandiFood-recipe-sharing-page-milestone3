@@ -6,7 +6,6 @@
     <div class="row no-gutters">
         <div class="col-12">
             <div class="image-slideshow">
-                
                 <div class="slider">
                     <h1>SCANDI KITCHEN</h1>
                     <div class="btnLeft"></div>
@@ -17,9 +16,7 @@
                         <img src="static/img/slide2.jpg">
                         <img src="static/img/slide3.jpg">
                     </div>
-                    
                 </div>
-                
             </div>
         </div>
     </div>
@@ -27,13 +24,13 @@
     <!-- display recipes -->
     <div class="container recipes-wrapper">
         {% for post in recipes.items %}
-            <div class="card">
-                <div class="thumb-img-wrapper">
+        <div class="card">
+            <div class="thumb-img-wrapper">
                 <img src="{{ post.recipe_image }}" class="card-img-top" alt="...">
             </div>
-
-                <div class="card-body">
-                    <!-- link to recipe -->
+            
+            <div class="card-body">
+                <!-- link to recipe -->
                 <h2> <a class="card-title" href="{{ url_for('recipes.recipe',recipe_id=post.id) }}">{{post.title}}</a></h2>
                 <!-- link to author's profile -->
                 <a href="{{url_for('users.user_posts',username=post.author.username)}}">Posted by: {{post.author.username}}</a>
@@ -41,8 +38,8 @@
                 <p>Published: {{post.date.strftime('%Y-%m-%d')}}</p>
                 <!-- direct to a single recipe page -->
                 <a class="btn btn-primary" href="{{url_for('recipes.recipe',recipe_id=post.id) }}" >Read decipe</a>
-                </div>
             </div>
+        </div>
         {% endfor %}
     </div>
     
@@ -53,7 +50,7 @@
 
 <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center">
-     {% for page_num in recipes.iter_pages() %}
+        {% for page_num in recipes.iter_pages() %}
         {% if recipes.page == page_num %}
         <li class="page-item disabled">
             <a class="page-link" href="{{url_for('core.index',page=page_num)}}">{{page_num}}</a>
@@ -63,8 +60,8 @@
             <a class="page-link" href="{{url_for('core.index',page=page_num)}}">{{page_num}}</a>
         </li>
         {% endif %}
-     {% endfor %}
+        {% endfor %}
     </ul>
-  </nav>
+</nav>
 
 {% endblock %}
