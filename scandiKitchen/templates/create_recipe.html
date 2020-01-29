@@ -2,7 +2,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container-fluid" align="center">
+<div class="container-fluid loginWrapper" align="center">
     
     <form class="register-form text-center" method='POST'>
         <div class="register-form-text">
@@ -10,13 +10,13 @@
         </div>
         <div class="inputs-wrapper create-recipe-wrapper">
             {{form.hidden_tag()}}
-            {{form.title.label(class="recipe-label")}}{{form.title(class="form-control")}}
-            {{form.text.label(class="recipe-label")}}<p class="create-recipe">let us know a little something about this meal</p>{{form.text(class="form-control")}}
-            {{form.cook_method.label(class="recipe-label")}}<p class="create-recipe">please separate each step by semicolon(;)</p>{{form.cook_method(class="form-control")}}
+            {{form.title.label(class="recipe-label")}}{{form.title(class="form-control loginForms")}}
+            {{form.text.label(class="recipe-label")}}<p class="create-recipe">let us know a little something about this meal</p>{{form.text(class="form-control loginForms")}}
+            {{form.cook_method.label(class="recipe-label")}}<p class="create-recipe">please separate each step by semicolon(;)</p>{{form.cook_method(class="form-control loginForms")}}
             
-            {{form.ingredients.label(class="recipe-label")}}<p class="create-recipe">please separate each ingredient by semicolon(;)</p>{{form.ingredients(class="form-control")}}
+            {{form.ingredients.label(class="recipe-label")}}<p class="create-recipe">please separate each ingredient by semicolon(;)</p>{{form.ingredients(class="form-control loginForms")}}
             
-            {{form.recipe_image.label(class="recipe-label")}}{{form.recipe_image(class="form-control")}}
+            {{form.recipe_image.label(class="recipe-label")}}{{form.recipe_image(class="form-contro loginFormsl")}}
         </div>
         {{form.submit(class="btn btn-primary")}}
         
@@ -26,3 +26,4 @@
 
 
 {% endblock %}
+

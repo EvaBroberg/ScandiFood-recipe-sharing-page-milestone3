@@ -49,8 +49,9 @@
   <!--adding update button-->
   {% if post.author == current_user %}
   <div>
-    <a href="{{url_for('recipes.update',recipe_id=post.id)}}">Update</a>
-    <button type="button" class="btn btn-danger" data-toggle='modal' data-target="#del_modal">Delete</button>
+    <!-- <a href="{{url_for('recipes.update',recipe_id=post.id)}}">Update</a> -->
+    <button type="button" class="btn updateDeleteBtn"><a href="{{url_for('recipes.update',recipe_id=post.id)}}">Update</a></button>
+    <button type="button" class="btn updateDeleteBtn" data-toggle='modal' data-target="#del_modal">Delete</button>
   </div>
   {% endif %}
 </div>

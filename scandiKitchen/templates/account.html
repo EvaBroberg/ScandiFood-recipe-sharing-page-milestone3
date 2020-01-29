@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<div class="container-fluid" align="center">
+<div class="loginWrapper" align="center">
     <form class="register-form text-center" method="POST" action="" enctype="multipart/form-data">
         <div class="user-img-hi register-form-text">
             <img align='center' src="{{url_for('static', filename='profile_pics/' + current_user.profile_image)}}">
@@ -10,14 +10,16 @@
         </div>
         <div class="inputs-wrapper">
             {{form.hidden_tag()}}
-            {{form.username.label}}{{form.username(class="form-control")}}
-            {{form.email.label}}{{form.email(class="form-control")}}
-            {{form.picture.label}}{{form.picture(class="form-control")}}
-            {{form.submit(class="btn btn-primary")}}
+            {{form.username.label}}{{form.username(class="form-control loginForms")}}
+            {{form.email.label}}{{form.email(class="form-control loginForms")}}
+            {{form.picture.label}}{{form.picture(class="form-control loginForms")}}
+           
         </div>
+        {{form.submit(class="btn btn-primary")}}
     </form>
 </div>
 
 
 
 {% endblock %}
+

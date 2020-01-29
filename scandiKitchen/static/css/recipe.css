@@ -53,6 +53,59 @@ padding: 1em;
     border-bottom: 2px solid #85cbcc;
 }
 
+.updateDeleteBtn {
+    background-color: #85cbcc;
+    color: white;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+.updateDeleteBtn:hover {
+    color: #85cbcc;
+}
+
+.modal-content {
+    background-color: #85cbcc;
+    color: white;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: center;
+    border: none;
+    text-transform: uppercase;
+}
+
+.modal-header h5 {
+    font-size: 2rem;
+}
+
+.modal-header .close {
+    position: absolute;
+    color: white;
+    font-size: 2rem;
+    right: 21px;
+}
+
+.modal-body p {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: center;
+    border: none;
+}
+
+button.btn.btn-secondary {
+    color: #85cbcc;
+}
+
+input.btn.btn-danger {
+    color: #85cbcc;
+}
+
 
 @media (min-width: 900px) {
     .recipeImageandText {

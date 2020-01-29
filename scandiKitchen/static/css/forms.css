@@ -10,9 +10,9 @@
 
 .register-form {
     position: relative;
-    width: 90%;
     border: 2px solid #85cbcc;
     margin: 50px 0 50px 0;
+    width: 95%;
 }
 
 .register-form-text {
@@ -55,8 +55,14 @@ label {
     font-size: 1.2rem;
 }
 
+input#recipe_image {
+    width: 100%;
+    background-color: rgba(255, 255, 255, .5);
+    border: 2px solid #85cbcc;
+}
+
 .loginForms {
-    color: #85cbcc;
+    color: white;
     border: solid 2px #85cbcc;
 }
 
@@ -88,13 +94,14 @@ input#submit:hover {
 
 p.create-recipe {
     margin-top: 0;
-    color: #85cbcc;
+    color: white;
     margin-bottom: 1.2rem;
     line-height: 1px;
 }
 
 .recipe-label {
     margin-top: 1.5rem;
+    color: white;
 }
 
 @media (min-width: 1200px) {
