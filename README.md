@@ -108,8 +108,7 @@ Navigation bar shrinks into a hamburger icon providing the user a drop-down menu
 
 6. #### Search Recipe
     
-    - The search field is provided in the navigation bar for all users to search for recipes by entering a word. The search engine looks for word matches in the existing recipes titles and filters them accordingly removing nonmatching posts from the home view.
-
+    - The search field is provided in the navigation bar for all users to search for recipes by entering a word. The search engine looks for word matches in the existing recipes and redirects user to search page that displais all filtered recipes.
 ### Features Left to Implement
 
 1. #### User profile recipe view
@@ -145,7 +144,27 @@ Navigation bar shrinks into a hamburger icon providing the user a drop-down menu
 
 ## Testing
 
-A full testing process can be found in a separate [tests.md](tests.md) file.
+- #### Manual testing
+
+- Entered different words in search field and checked that page was redirecting every time and displaying all suitable recipes.
+- Clicked on all navigation links while not legged in and checked that all pages redirect correctly.
+- Clicked on recipe name to check that it leads me to recipe page.
+- Clicked on read recipe button to check that it also redirects to recipe page.
+- Clicked on user name displayed on recipe card to check that it leads to a user page displaying all the recipes posted by that user.
+
+- Tried to register a new user entering an email that I have already used to make sure user wouldn't be created, then repeated same procss for username.
+- Tried to register a new user enterning non matching password makimg sure this wouldn't work.
+- Created a new user fulfilling all requirements and clicked on account button in navigation to make sure user account was really created.
+- Inside user account uploaded picture and tried to update information, then checked that user information was indeed changed.
+
+- Tried to log in existing user using incorrect password to make sure user wouldn't be recognised.
+- Logged in existing user.
+- Uploaded recipe and checked that it appeared in the home page.
+- Selected a recipe created by this user and tried to update information saved and checked that info was updated.
+- Selected a recipe created by this user deleted it.
+- Logged user out.
+
+- Ran manual testing above on different operating systems, scalled screen size and checked on different devices.
 
 ## Deployment
 
